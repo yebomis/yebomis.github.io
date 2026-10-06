@@ -1,17 +1,25 @@
 const detailMediaStyles = document.createElement("style");
 detailMediaStyles.textContent = `
-  .feature-figure img { width: 100%; height: auto !important; max-height: none !important; object-fit: contain; background: transparent; }
+  .feature-figure img { display: block; width: auto; max-width: 100%; height: auto !important; max-height: none !important; margin-inline: auto; object-fit: contain; background: transparent; }
   .content-figure-grid.is-pair { align-items: start; }
   .conclusion-grid > .content-figure-grid { grid-column: 1 / -1; width: 100%; }
   .paper-gallery { margin-top: 42px; }
-  .paper-gallery-heading { display: grid; grid-template-columns: minmax(150px,.34fr) 1fr; gap: 24px; align-items: end; margin-bottom: 16px; }
+  .paper-gallery-heading { display: grid; grid-template-columns: minmax(150px,.34fr) minmax(0,1fr) auto; gap: 24px; align-items: end; margin-bottom: 16px; }
   .paper-gallery-heading h3 { margin: 0; font-size: clamp(1.15rem,2.3vw,1.65rem); letter-spacing: -.03em; }
   .paper-gallery-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 46%); gap: 18px; align-items: start; overflow-x: auto; padding: 0 0 16px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
   .paper-gallery-track figure { min-width: 0; margin: 0; scroll-snap-align: start; }
   .paper-gallery-track img { display: block; width: auto; max-width: 100%; height: auto; max-height: 560px; margin-inline: auto; object-fit: contain; background: transparent; }
   .paper-gallery-track figcaption { margin-top: 9px; color: var(--muted); font-size: .74rem; line-height: 1.45; }
+  .paper-gallery-controls { display: flex; gap: 8px; justify-self: end; }
+  .paper-gallery-control { display: grid; width: 42px; height: 42px; padding: 0; place-items: center; border: 1px solid rgba(255,255,255,.62); border-radius: 0; color: #fff; background: rgba(255,255,255,.08); font: 700 1.2rem/1 system-ui,sans-serif; cursor: pointer; transition: color 160ms ease, background 160ms ease, border-color 160ms ease, opacity 160ms ease; }
+  .paper-gallery-control:hover:not(:disabled), .paper-gallery-control:focus-visible { color: #0b1938; border-color: #f5ca3b; background: #f5ca3b; outline: none; }
+  .paper-gallery-control:disabled { opacity: .28; cursor: default; }
+  .paper-gallery-track figure { display: flex; flex-direction: column; justify-content: flex-start; }
+  .paper-gallery-track img { flex: 0 0 auto; }
   @media (max-width: 760px) {
-    .paper-gallery-heading { grid-template-columns: 1fr; gap: 6px; }
+    .paper-gallery-heading { grid-template-columns: 1fr auto; gap: 8px 14px; }
+    .paper-gallery-heading .section-label { grid-column: 1 / -1; }
+    .paper-gallery-heading h3 { align-self: center; }
     .paper-gallery-track { grid-auto-columns: 86%; }
     .paper-gallery-track img { height: auto; max-height: none; }
   }
@@ -327,9 +335,10 @@ const PAPER_PAGES = {
           label: "Education and field use",
           title: "Children and caregivers use familiar objects as material for AI storytelling",
           items: [
-            { src: "../assets/detail/phodong/multicultural-1.jpg", alt: "Phodong multicultural children’s AI workshop", caption: "Object-based storytelling as a guided AI learning activity." },
-            { src: "../assets/detail/phodong/multicultural-2.jpg", alt: "A participant using Phodong on a tablet", caption: "Hands-on use exposes where the interface needs adult support." },
-            { src: "../assets/detail/phodong/multicultural-3.jpg", alt: "Children participating in a Phodong activity", caption: "Children contribute objects, language, and narrative choices." },
+            { src: "../assets/detail/phodong/multicultural-1.jpg", alt: "A child presents a Phodong story during a multicultural children’s AI workshop", caption: "A child shares the story created from her own words and objects." },
+            { src: "../assets/detail/phodong/multicultural-2.jpg", alt: "A child and facilitators use Phodong with a photographed teddy bear", caption: "Facilitators support object selection and story input without taking over the child’s choices." },
+            { src: "../assets/detail/phodong/multicultural-3.jpg", alt: "A child reads and responds to a Phodong story on a tablet", caption: "The generated story returns to the activity as material for reading, reflection, and revision." },
+            { src: "../assets/detail/phodong/seoul-early-childhood-festival.jpg", alt: "Phodong activity booth at the 2026 Seoul Early Childhood Book Festival", caption: "Phodong in public educational use at the 2026 Seoul Early Childhood Book Festival." },
           ],
         },
         {
@@ -513,13 +522,47 @@ function renderFigures(figures = []) {
 
 function renderGalleries(galleries = []) {
   if (!galleries.length) return "";
-  return galleries.map((gallery) => `<section class="paper-gallery" aria-label="${gallery.title}">
-    <div class="paper-gallery-heading"><p class="section-label">${gallery.label || "Field gallery"}</p><h3>${gallery.title}</h3></div>
-    <div class="paper-gallery-track">${gallery.items.map((item) => `<figure>
+  return galleries.map((gallery, galleryIndex) => {
+    const trackId = `paper-gallery-${galleryIndex}`;
+    return `<section class="paper-gallery" aria-label="${gallery.title}">
+    <div class="paper-gallery-heading"><p class="section-label">${gallery.label || "Field gallery"}</p><h3>${gallery.title}</h3><div class="paper-gallery-controls" aria-label="Gallery navigation">
+      <button class="paper-gallery-control" type="button" data-gallery-direction="prev" aria-controls="${trackId}" aria-label="Previous images">←</button>
+      <button class="paper-gallery-control" type="button" data-gallery-direction="next" aria-controls="${trackId}" aria-label="Next images">→</button>
+    </div></div>
+    <div class="paper-gallery-track" id="${trackId}" tabindex="0">${gallery.items.map((item) => `<figure>
       <img src="${item.src}" alt="${item.alt}" loading="lazy" />
       <figcaption>${item.caption || ""}</figcaption>
     </figure>`).join("")}</div>
-  </section>`).join("");
+  </section>`;
+  }).join("");
+}
+
+function bindGalleryControls() {
+  document.querySelectorAll(".paper-gallery").forEach((gallery) => {
+    const track = gallery.querySelector(".paper-gallery-track");
+    const previous = gallery.querySelector('[data-gallery-direction="prev"]');
+    const next = gallery.querySelector('[data-gallery-direction="next"]');
+    if (!track || !previous || !next) return;
+
+    const updateControls = () => {
+      const limit = Math.max(0, track.scrollWidth - track.clientWidth);
+      previous.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft >= limit - 4;
+    };
+    const move = (direction) => {
+      const firstCard = track.querySelector("figure");
+      const gap = Number.parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 18;
+      const distance = firstCard ? firstCard.getBoundingClientRect().width + gap : track.clientWidth * .85;
+      track.scrollBy({ left: direction * distance, behavior: "smooth" });
+    };
+
+    previous.addEventListener("click", () => move(-1));
+    next.addEventListener("click", () => move(1));
+    track.addEventListener("scroll", updateControls, { passive: true });
+    window.addEventListener("resize", updateControls, { passive: true });
+    track.querySelectorAll("img").forEach((image) => image.addEventListener("load", updateControls, { once: true }));
+    updateControls();
+  });
 }
 
 function renderFacts(facts = []) {
@@ -615,4 +658,7 @@ function renderPaper(page) {
 
 const paperKey = document.body.dataset.paper;
 const paperPage = PAPER_PAGES[paperKey];
-if (paperPage) renderPaper(paperPage);
+if (paperPage) {
+  renderPaper(paperPage);
+  bindGalleryControls();
+}

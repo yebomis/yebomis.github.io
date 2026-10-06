@@ -1396,6 +1396,13 @@ h1, h2, h3, p { margin-top: 0; }
   background: #fff;
 }
 
+.visual-card.media-contain > img {
+  box-sizing: border-box;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
 .visual-placeholder {
   display: grid;
   width: 100%;
