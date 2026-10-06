@@ -8,7 +8,7 @@ detailMediaStyles.textContent = `
   .paper-gallery-heading h3 { margin: 0; font-size: clamp(1.15rem,2.3vw,1.65rem); letter-spacing: -.03em; }
   .paper-gallery-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 46%); gap: 18px; align-items: start; overflow-x: auto; padding: 0 0 16px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
   .paper-gallery-track figure { min-width: 0; margin: 0; scroll-snap-align: start; }
-  .paper-gallery-track img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; background: transparent; }
+  .paper-gallery-track img { display: block; width: auto; max-width: 100%; height: auto; max-height: 560px; margin-inline: auto; object-fit: contain; background: transparent; }
   .paper-gallery-track figcaption { margin-top: 9px; color: var(--muted); font-size: .74rem; line-height: 1.45; }
   @media (max-width: 760px) {
     .paper-gallery-heading { grid-template-columns: 1fr; gap: 6px; }
@@ -273,76 +273,143 @@ const PAPER_PAGES = {
     subtitle: "A Phygital Platform for Parent–Child Co-Creation",
     authors: "Gahui Kim* · <strong>Yebom Choi*</strong> · Yoojeong Kim* <span>*Equal contribution</span>",
     abstractLabel: "Research, product, and field journey",
-    abstract: "Phodong is a phygital storytelling platform that turns children’s everyday objects into shared narrative material. A parent sets the child’s age, preferred genre, and learning goal; the child photographs an object; and vision plus a multimodal language model transform its visible features into a character and an opening line. Each object remains a reusable story card rather than disappearing into a finished AI output. The family decides how cards connect and revisits the sequence as a storybook or audio story. This core research prototype later developed along three connected paths: an HCI publication and Excellence Award, an app and commercialization process through U300, and field programs in which children and caregivers used object-based storytelling in workshops and public exhibitions.",
+    abstract: "Phodong is a connected research and product project built around a simple idea: a child’s everyday objects can become material for stories they make with other people. Its Semantic Storification Framework (SSF) separates what can be observed in a photographed object from what the object usually does, turns those grounded features into an age-adjusted problem and solution, and checks the generated story before it is saved. That technical core supports the Phodong character IP, a child–caregiver app and web experience, and educational activities used in workshops and public programs. The project has also moved through crowdfunding and the U300 student-startup program and is now in beta app testing. Across these forms, the goal remains the same: use AI to open a creative exchange rather than finish the story for the child.",
     question: "Can AI help a family build a story together without taking the story away from them?",
     links: [
       { label: "Visit Phodong ↗", url: "https://phodong-41b73.web.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio", primary: true },
       { label: "Read paper ↗", url: "https://www.dbpia.co.kr/journal/voisDetail?voisId=VOIS00810329" },
     ],
-    summaryTitle: "Phodong begins with one simple move: point the camera at something already in the child’s world.",
+    summaryTitle: "One technical core connects the research paper, the product, and the educational program.",
     summary: [
-      "Many children’s digital experiences still center on passive consumption, while parents are either excluded or asked to carry the entire creative burden. Phodong begins with the objects already present in family life.",
-      "The design goal was not to generate the best finished story. It was to provide enough structure for a parent and child to notice, reinterpret, and continue an idea together. The research, product, and education activities on this page all grow from that same interaction principle.",
+      "SSF is the generative and validation layer: it grounds story actions in photographed objects and adjusts language and event complexity to a selected developmental level. Phodong is the experience layer: a character IP and an app/web product that make the process understandable and inviting for families.",
+      "Field workshops, exhibitions, crowdfunding, U300, and beta testing are not separate side projects. Each one tests a different question—whether children can enter the story, whether caregivers can guide without taking over, and whether the research prototype can survive outside a controlled demonstration.",
     ],
     system: {
-      label: "The system",
-      title: "An object becomes a character, then a story card, then part of a shared narrative.",
+      label: "01 · From object to story",
+      title: "A child photographs an object; the family chooses the direction; the object returns as a story character.",
       paragraphs: [
-        "Object recognition captures visual features, and a multimodal LLM returns structured character and dialogue data. Each object becomes a story card that can be arranged and connected with others.",
-        "The final sequence can be revisited as a web storybook or audiobook. Generation is asynchronous so the interaction can keep moving while leaving creative decisions between cards to the family.",
+        "The experience begins in the child’s own environment. A child photographs favorite toys or ordinary objects, then the child and caregiver select photos, add the child’s words, and choose a story direction together. The system turns those specific materials—not a generic prompt—into characters, actions, and a personalized story.",
+        "The four-step flow keeps authorship visible: capture, choose together, transform the child’s words and objects, and keep the finished story as something the family can revisit. The Phodong character IP gives this technical process a consistent guide and makes the transition from camera input to storybook legible to young users.",
       ],
-      figures: [{ src: "../assets/detail/phodong/system.png", alt: "Phodong camera, story card, and storybook screens", caption: "The pipeline moves from a photographed object to reusable narrative material." }],
-      facts: [["Input", "Everyday physical objects"], ["Core", "Object recognition + multimodal LLM"], ["Output", "Story cards · web book · audio"], ["Design aim", "Distributed creative agency"]],
+      figures: [
+        { src: "../assets/detail/phodong/flow-1.png", alt: "A child photographs a favorite everyday object", caption: "1 · Capture objects from the child’s everyday life." },
+        { src: "../assets/detail/phodong/flow-2.png", alt: "A child and caregiver choose photos and story settings together", caption: "2 · Child and caregiver choose the material and direction together." },
+        { src: "../assets/detail/phodong/flow-3.png", alt: "The child’s words and photographed objects become story elements", caption: "3 · The child’s words and objects are translated into story elements." },
+        { src: "../assets/detail/phodong/flow-4.png", alt: "Children hold their personalized Phodong storybooks", caption: "4 · The result becomes a story the family can revisit and keep." },
+      ],
+      facts: [["Input", "Photographed objects + child’s words"], ["Choice", "Photos · story direction · level"], ["Experience", "Phodong app + web story"], ["Current stage", "Beta app testing"]],
     },
     evidence: {
-      label: "The design contribution",
-      title: "The system demonstrates a different division of creative labor.",
+      label: "02 · Semantic Storification Framework",
+      title: "SSF keeps generated stories grounded, development-aware, and repairable.",
       paragraphs: [
-        "This paper presents a system and design rationale, not an outcome study, so it does not claim measured effects on children’s creativity. Its contribution is the interaction structure: AI generates partial narrative material while the family supplies interpretation, sequencing, and play.",
-        "That distinction matters. A complete story can look impressive while leaving little room for a child or parent to author anything.",
+        "SSF separates three jobs. The Semantic Object Interpreter records observable traits, distinguishes them from an object’s general function, and asks for caregiver confirmation when identification is uncertain. The Narrative Prompt Architect builds a safe problem that can actually be solved through those traits or functions. The Developmental Language Adapter controls language, participating objects, and solution steps for the selected level.",
+        "A second pass checks whether each object contributes to the resolution, whether the cited feature is present in the input, and whether the story stays within the selected complexity limits. Local problems can be repaired only on the affected page and its neighbors; broader causal problems trigger regeneration. The current thresholds are engineering defaults under evaluation, not claims of validated developmental efficacy.",
       ],
-      stats: [["partial", "rather than finished generation"], ["shared", "parent–child authorship"], ["physical", "objects anchor the story"]],
-      figures: [{ src: "../assets/detail/phodong/thumbnail.png", alt: "A child photographing an everyday object for Phodong", caption: "Physical objects stay inside the creative loop instead of becoming invisible input." }],
+      stats: [["3", "SSF modules"], ["21", "deterministic code checks"], ["5", "integration scenarios"]],
+      figures: [
+        { src: "../assets/detail/phodong/object-characters.png", alt: "A dinosaur toy and a cup transformed into story characters", caption: "Observed features and familiar functions give each object a plausible role in the story." },
+        { src: "../assets/detail/phodong/child-voice.png", alt: "A child’s own words shaping a personalized story character", caption: "The child’s language remains visible as source material instead of being replaced by a generic story prompt." },
+      ],
     },
     followup: {
-      label: "From research prototype to product and field program",
-      title: "The paper became an app, and the app became a setting for observing co-creation in use.",
+      label: "03 · Product, field use, and venture translation",
+      title: "The same system now moves between research, a beta product, and educational practice.",
       paragraphs: [
-        "After the HCI prototype, we continued building Phodong as a usable product. U300 supported the commercialization process, and ongoing app development and beta testing have focused on making object capture, story continuity, caregiver settings, and output review work outside a demonstration setting.",
-        "Field use formed a second extension. In multicultural children’s AI workshops and education-fair demonstrations, the object-centered interaction became part of a larger activity: children noticed and reinterpreted familiar things, while caregivers and instructors decided when to prompt, wait, or join.",
-        "Phodong now spans three connected forms of practice: research, business through ongoing app development, and educational content used in workshops and community service. The HCI Korea Excellence Award recognizes this connected trajectory rather than a separate award project.",
+        "The HCI prototype was translated into an app and web experience organized around the Phodong character IP. Product work now focuses on object confirmation, caregiver controls, story continuity, output review, and a stable end-to-end flow for beta testers.",
+        "In multicultural children’s AI workshops and education-fair sessions, Phodong has also been used as educational content. Children bring their own objects and interpretations; caregivers or instructors help with reflection and turn-taking. These sessions surface practical questions that a paper prototype cannot answer, including where instructions fail and when adult guidance helps or interrupts.",
+        "Crowdfunding and U300 added a venture lens: how the research can be communicated, delivered, and maintained as a real product. The HCI Korea Excellence Award, public exhibitions, and current beta testing belong to this continuous translation process.",
       ],
-      additions: [["Research", "HCI Korea publication"], ["Recognition", "HCI Korea Excellence Award"], ["Translation", "U300 commercialization"], ["Current", "App development + beta testing"]],
-      figures: [{ src: "../assets/detail/phodong/award.jpg", alt: "Phodong team receiving the HCI Korea Excellence Award", caption: "The publication, award, product development, and field program are one continuous project." }],
+      additions: [["Research", "HCI Korea publication + Excellence Award"], ["Product", "Character IP · app · web"], ["Education", "Workshops + community programs"], ["Venture", "Crowdfunding · U300 · beta testing"]],
+      figures: [],
       galleries: [
         {
           label: "Education and field use",
-          title: "Object-based storytelling became a hands-on AI learning activity",
+          title: "Children and caregivers use familiar objects as material for AI storytelling",
           items: [
-            { src: "../assets/detail/phodong/multicultural-1.jpg", alt: "Phodong multicultural children’s AI workshop", caption: "Object-based storytelling workshop." },
-            { src: "../assets/detail/phodong/multicultural-2.jpg", alt: "A participant using Phodong on a tablet", caption: "Guided tablet interaction." },
-            { src: "../assets/detail/phodong/multicultural-3.jpg", alt: "Children participating in a Phodong activity", caption: "Creative activity in the field." },
+            { src: "../assets/detail/phodong/multicultural-1.jpg", alt: "Phodong multicultural children’s AI workshop", caption: "Object-based storytelling as a guided AI learning activity." },
+            { src: "../assets/detail/phodong/multicultural-2.jpg", alt: "A participant using Phodong on a tablet", caption: "Hands-on use exposes where the interface needs adult support." },
+            { src: "../assets/detail/phodong/multicultural-3.jpg", alt: "Children participating in a Phodong activity", caption: "Children contribute objects, language, and narrative choices." },
           ],
         },
         {
-          label: "Product translation",
-          title: "Exhibitions, U300, and continued app development",
+          label: "Research to product",
+          title: "Recognition, public demonstration, crowdfunding, and startup development",
           items: [
-            { src: "../assets/detail/phodong/education-fair-1.webp", alt: "Phodong education-fair booth", caption: "Public exhibition and live explanation." },
-            { src: "../assets/detail/phodong/education-fair-2.webp", alt: "Visitor trying Phodong at an exhibition", caption: "Product demonstration with visitors." },
+            { src: "../assets/detail/phodong/award.jpg", alt: "Phodong team receiving the HCI Korea Excellence Award", caption: "HCI Korea 2026 Excellence Award." },
+            { src: "../assets/detail/phodong/education-fair-1.webp", alt: "Phodong education-fair booth", caption: "Public exhibition and live product explanation." },
+            { src: "../assets/detail/phodong/education-fair-2.webp", alt: "Visitor trying Phodong at an exhibition", caption: "Visitors try the research prototype as a product experience." },
             { src: "../assets/detail/phodong/u300.png", alt: "Phodong U300 commercialization activity", caption: "U300 commercialization track." },
-            { src: "../assets/detail/phodong/funding.webp", alt: "Phodong product development milestone", caption: "Continuing development beyond the paper." },
+            { src: "../assets/detail/phodong/funding.webp", alt: "Phodong crowdfunding campaign", caption: "Crowdfunding translated the concept for families beyond the research setting." },
           ],
         },
       ],
     },
     implication: {
-      label: "What this changes",
-      title: "Child-facing AI should be evaluated by how it distributes agency.",
-      paragraphs: ["For co-creative systems, output quality is only one outcome. We also need to ask who introduces ideas, who changes them, and whether people can build on one another."],
-      lessons: [["01", "Generate openings, not finished answers."], ["02", "Keep physical materials inside the creative loop."], ["03", "Measure participation as well as output quality."]],
+      label: "04 · Feedback and next evaluation",
+      title: "A usable product still has to show that children can understand, enjoy, and shape it.",
+      paragraphs: ["Children’s sticker feedback in a field activity offered an accessible way to express whether they liked the Phodong characters and story experience. It is valuable design feedback, but it is not a controlled efficacy result. The next step is to pair this kind of child-friendly response with observed participation, caregiver input, comprehension checks, and developmentally appropriate evaluation during the beta period."],
+      figures: [{ src: "../assets/detail/phodong/child-evaluation.png", alt: "Children’s sticker evaluation board for the Phodong activity", caption: "A child-friendly evaluation board used after a field activity; interpreted as formative feedback rather than evidence of learning efficacy." }],
+      lessons: [["01", "Ground each generated action in the child’s object."], ["02", "Preserve choices for children and caregivers."], ["03", "Validate both the product flow and the developmental claims."]],
     },
     citation: "Kim, G., Choi, Y., & Kim, Y. (2026). Phodong: A Phygital Platform for Parent–Child Co-Creation. Proceedings of HCI Korea 2026.",
+  },
+
+  "youth-safety": {
+    slug: "youth-safety",
+    back: "project-youth-safety",
+    venue: "Government research · AI Safety Institute, Republic of Korea · 2026–Current",
+    title: "Korean Youth AI Safety Evaluation Benchmark",
+    subtitle: "Evaluating chatbot and companion-AI risks in Korean youth contexts",
+    authors: "Research project · <strong>Yebom Choi</strong>",
+    abstractLabel: "Project overview",
+    abstract: "This ongoing project develops a reproducible Korean-language benchmark for evaluating how chatbots and companion AI respond to adolescents. Existing safety benchmarks are often built around English prompts, general harmful-content refusal, or short single-turn attacks. They can miss risks that accumulate through a relationship: emotional overdependence, boundary violations, manipulation, identity confusion, grooming, crisis response, and the difference between a malicious request and a young person asking for help. The project reviews international benchmarks, localizes public evaluation material through a staged translation and cultural-adaptation process, organizes 480 items across six youth-specific risk groups, and validates the resulting protocol with youth-domain and AI-safety experts before pilot evaluation across major models.",
+    question: "How can we test whether an AI is safe for young people—not only in one answer, but across a developing relationship?",
+    links: [],
+    summaryTitle: "The benchmark treats age, culture, and relationship dynamics as evaluation conditions—not demographic footnotes.",
+    summary: [
+      "A response that is acceptable for an adult may be developmentally inappropriate for an adolescent. A refusal can also be unsafe if it abandons a young person who is asking for legitimate help. The benchmark therefore evaluates harmful output together with helpfulness, age fit, and cumulative relational risk.",
+      "The work is designed as public evaluation infrastructure: a documented risk taxonomy, Korean evaluation data, a common protocol and rubric, expert validation records, model pilot results, and an operating guide for future revisions.",
+    ],
+    system: {
+      label: "01 · What is being built",
+      title: "Six risk groups connect single-turn safety failures with longer relational harms.",
+      paragraphs: [
+        "The taxonomy covers grooming and sexual exploitation; boundary violation and manipulation; identity confusion and anthropomorphism; emotional dependence and social isolation; self-harm, suicide, and crisis response; and companion-specific risks. Each group includes inclusion and exclusion criteria so that evaluation items test a defined failure rather than a broad theme.",
+        "A five-stage localization process separates literal Korean translation from cultural adaptation. Items are revised for Korean youth language, school and family contexts, peer relationships, domestic digital-service patterns, and relevant help resources such as Youth Counseling 1388.",
+      ],
+      figures: [{ src: "../assets/detail/aisi/benchmark-overview.png", alt: "Overview of the Korean Youth AI Safety Evaluation Benchmark workflow, metrics, deliverables, and impact", caption: "The current project plan connects benchmark review, six youth-specific risk areas, Korean localization, expert validation, pilot evaluation, and reusable deliverables." }],
+      facts: [["Risk groups", "6"], ["Localized items", "480"], ["Expert panel", "8–12 reviewers"], ["Pilot prototype", "132 items"]],
+    },
+    evidence: {
+      label: "02 · Evaluation protocol",
+      title: "The same schema supports both single-turn prompts and risks that emerge across multiple turns.",
+      paragraphs: [
+        "The protocol combines six-dimensional rubric scoring with standardized metadata for age band, risk group, dialogue stage, and expected safety behavior. Expert review spans counseling, child protection and welfare, language and culture, and AI safety. Two review rounds and inter-rater reliability checks are planned before the benchmark is treated as validated.",
+        "The metrics are intentionally broader than refusal rate. Critical Failure Rate tracks severe unsafe responses; Multi-turn Vulnerability measures risk that appears through extended dialogue; Trusted Reference Ratio checks whether support points to credible help; Age-band Gap compares safety performance across developmental groups; and the proposed Cumulative Relational Risk Index captures harm that builds over a sequence.",
+      ],
+      stats: [["5", "models in pilot evaluation"], ["≥ .80", "target inter-rater reliability"], ["2", "expert review rounds"]],
+      figures: [],
+    },
+    followup: {
+      label: "03 · Deliverables and current contribution",
+      title: "The goal is a benchmark that other researchers and developers can rerun, inspect, and extend.",
+      paragraphs: [
+        "Planned outputs include an international benchmark analysis, the 480-item Korean dataset, expert-validation results, a safety-evaluation protocol with rubric and code, pilot results across multiple models, and a 132-item prototype with an operation guide. Versioning, contamination control, item revision, and regression evaluation are included so the benchmark can evolve without losing traceability.",
+        "My contribution focuses on reviewing international benchmarks, defining how public evaluation data should be localized for Korean youth contexts, structuring the risk taxonomy and evaluation materials, and supporting expert validation. Because the project is ongoing, this page reports the design and planned validation rather than presenting uncompleted model results as findings.",
+      ],
+      additions: [["Review", "International youth-safety benchmarks"], ["Localization", "Korean language + cultural context"], ["Validation", "Youth-domain + AI-safety experts"], ["Use", "Public-sector evaluation infrastructure"]],
+      figures: [],
+      galleries: [],
+    },
+    implication: {
+      label: "Why it matters",
+      title: "Youth AI safety requires testing the relationship, not only filtering the sentence.",
+      paragraphs: ["A useful benchmark must distinguish curiosity from malicious intent, safe support from blanket refusal, and momentary compliance from cumulative relational harm. Making those distinctions measurable can help public institutions, researchers, and developers identify where safeguards fail for different age groups and interaction patterns."],
+      lessons: [["01", "Evaluate age-appropriate help, not refusal alone."], ["02", "Test multi-turn and cumulative relational risk."], ["03", "Keep localization and expert judgment auditable."]],
+    },
+    citationLabel: "Project status",
+    citation: "Ongoing government research project with the AI Safety Institute, Republic of Korea. Benchmark data and validation results will be added after completion and public release.",
   },
 
   "on-the-desk": {

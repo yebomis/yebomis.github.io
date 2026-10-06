@@ -238,6 +238,7 @@ const detailData = {
     role: "International benchmark review, localization of public evaluation data, and expert-validation support.",
     methods: "Benchmark review; Korean localization; risk taxonomy development; expert validation.",
     finding: "Creates an evaluation foundation that reflects Korean language and youth-use contexts.",
+    page: "research/youth-ai-safety.html",
   },
   "always-on-ai": {
     eyebrow: "AXIS Lab research project · 2026–2029",
