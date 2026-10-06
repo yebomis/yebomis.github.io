@@ -338,7 +338,6 @@ const PAPER_PAGES = {
             { src: "../assets/detail/phodong/multicultural-1.jpg", alt: "A child presents a Phodong story during a multicultural children’s AI workshop", caption: "A child shares the story created from her own words and objects." },
             { src: "../assets/detail/phodong/multicultural-2.jpg", alt: "A child and facilitators use Phodong with a photographed teddy bear", caption: "Facilitators support object selection and story input without taking over the child’s choices." },
             { src: "../assets/detail/phodong/multicultural-3.jpg", alt: "A child reads and responds to a Phodong story on a tablet", caption: "The generated story returns to the activity as material for reading, reflection, and revision." },
-            { src: "../assets/detail/phodong/seoul-early-childhood-festival.jpg", alt: "Phodong activity booth at the 2026 Seoul Early Childhood Book Festival", caption: "Phodong in public educational use at the 2026 Seoul Early Childhood Book Festival." },
           ],
         },
         {
@@ -348,8 +347,6 @@ const PAPER_PAGES = {
             { src: "../assets/detail/phodong/award.jpg", alt: "Phodong team receiving the HCI Korea Excellence Award", caption: "HCI Korea 2026 Excellence Award." },
             { src: "../assets/detail/phodong/education-fair-1.webp", alt: "Phodong education-fair booth", caption: "Public exhibition and live product explanation." },
             { src: "../assets/detail/phodong/education-fair-2.webp", alt: "Visitor trying Phodong at an exhibition", caption: "Visitors try the research prototype as a product experience." },
-            { src: "../assets/detail/phodong/u300.png", alt: "Phodong U300 commercialization activity", caption: "U300 commercialization track." },
-            { src: "../assets/detail/phodong/funding.webp", alt: "Phodong crowdfunding campaign", caption: "Crowdfunding translated the concept for families beyond the research setting." },
           ],
         },
       ],
@@ -430,7 +427,7 @@ const PAPER_PAGES = {
     authors: "<strong>Yebom Choi</strong>",
     abstract: "AI companions are increasingly encountered as bodies that share space, respond, and appear available for interaction. This study examines whether physical co-presence changes how people implicitly construe an AI’s mind: Agency, or the capacity to act and intend, and Experience, or the capacity to feel. We also ask whether these mind attributions become linked to moral attribution: Moral Agency, meaning responsibility and accountability, and Moral Patiency, meaning care and vulnerability. In a between-subjects experiment (N = 69; Physical n = 36, Virtual n = 33), participants interacted for 10 minutes with the same compact desktop companion robot platform either as a physically co-present robot or as a matched screen-based avatar, using structured and free conversation about everyday topics. They completed Single-Category Implicit Association Tests before and after the interaction, along with explicit post-interaction ratings. Participants did not explicitly attribute greater mind or moral standing to the physical robot. Implicit measures, however, showed a selective pattern: physical co-presence increased Experience attribution (g = .63, p = .012), did not increase Agency attribution (p = .901), and made Agency change predictive of Moral Agency only in the physical condition (interaction β = .525, p = .031). The findings show that a brief co-present encounter can reveal implicit shifts in how AI is associated with feeling and responsibility after only a short everyday interaction, even when explicit ratings remain unchanged. For HRI, this points to physical co-presence as a design condition that can shape where responsibility is implicitly placed before such changes are visible in self-report.",
     question: "When the same AI moves from a screen onto the desk, does its agency begin to feel morally real?",
-    links: [{ label: "Read thesis ↗", url: "https://dcollection.skku.edu/public_resource/pdf/000000193351_20261006091122.pdf", primary: true }],
+    links: [{ label: "Read thesis ↗", url: "https://drive.google.com/file/d/15OSB0PZW5pRxiBokRwO81X-npxQyx_QA/view?usp=sharing", primary: true }],
     summaryTitle: "A body may change not what we say about AI, but how its actions register before reflection.",
     summary: [
       "People readily deny that current AI has a mind, yet still orient toward a robot’s gaze, movement, and proximity. I wanted to know whether putting an otherwise matched agent into shared physical space changes associations that participants may not report directly.",
@@ -524,11 +521,12 @@ function renderGalleries(galleries = []) {
   if (!galleries.length) return "";
   return galleries.map((gallery, galleryIndex) => {
     const trackId = `paper-gallery-${galleryIndex}`;
-    return `<section class="paper-gallery" aria-label="${gallery.title}">
-    <div class="paper-gallery-heading"><p class="section-label">${gallery.label || "Field gallery"}</p><h3>${gallery.title}</h3><div class="paper-gallery-controls" aria-label="Gallery navigation">
+    const isStatic = gallery.items.length <= 3;
+    return `<section class="paper-gallery${isStatic ? " is-static" : ""}" aria-label="${gallery.title}">
+    <div class="paper-gallery-heading"><p class="section-label">${gallery.label || "Field gallery"}</p><h3>${gallery.title}</h3>${isStatic ? "" : `<div class="paper-gallery-controls" aria-label="Gallery navigation">
       <button class="paper-gallery-control" type="button" data-gallery-direction="prev" aria-controls="${trackId}" aria-label="Previous images">←</button>
       <button class="paper-gallery-control" type="button" data-gallery-direction="next" aria-controls="${trackId}" aria-label="Next images">→</button>
-    </div></div>
+    </div>`}</div>
     <div class="paper-gallery-track" id="${trackId}" tabindex="0">${gallery.items.map((item) => `<figure>
       <img src="${item.src}" alt="${item.alt}" loading="lazy" />
       <figcaption>${item.caption || ""}</figcaption>

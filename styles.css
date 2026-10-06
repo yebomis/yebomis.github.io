@@ -1535,7 +1535,7 @@ h1, h2, h3, p { margin-top: 0; }
 .detail-gallery button:hover,
 .detail-gallery button:focus-visible,
 .detail-gallery button.is-active { border-color: var(--yellow); outline: none; }
-.detail-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.detail-gallery img { display: block; width: 100%; height: auto; object-fit: contain; background: var(--paper); }
 .detail-dialog h2 { max-width: 690px; margin-bottom: 12px; font-size: clamp(1.65rem, 4vw, 2.5rem); line-height: 1.08; letter-spacing: -0.045em; }
 .detail-summary { max-width: 720px; margin-bottom: 24px; color: var(--text); font-size: 1rem; line-height: 1.58; }
 .detail-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
