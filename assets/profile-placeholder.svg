@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-labelledby="title desc">
+  <title id="title">Profile placeholder</title>
+  <desc id="desc">A simple portrait-style placeholder for Yebom Choi's personal website.</desc>
+  <rect width="480" height="480" fill="#dceafa"/>
+  <circle cx="240" cy="184" r="88" fill="#253248"/>
+  <path d="M94 480c19-110 73-168 146-168s127 58 146 168H94z" fill="#6f9bd8"/>
+  <circle cx="204" cy="185" r="12" fill="#fff"/>
+  <circle cx="276" cy="185" r="12" fill="#fff"/>
+  <path d="M198 247c25 22 59 22 84 0" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <path d="M132 196c8-84 54-129 108-129s100 45 108 129c-38-38-81-56-129-54-36 2-66 20-87 54z" fill="#1d2739"/>
+  <circle cx="392" cy="92" r="34" fill="#4d9a79" opacity=".92"/>
+  <circle cx="86" cy="92" r="22" fill="#d66c7b" opacity=".9"/>
+  <circle cx="392" cy="390" r="20" fill="#d3a345" opacity=".9"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">ScreenX immersive cinema study</title>
+  <desc id="desc">A minimal three-screen cinema diagram representing 270-degree immersive projection.</desc>
+  <rect width="1200" height="720" fill="#0b1938"/>
+  <path d="M120 180h240v360H120zM420 125h360v470H420zM840 180h240v360H840z" fill="#ffffff" stroke="#f5ca3b" stroke-width="10"/>
+  <path d="M165 225h150v270H165zM475 180h250v360H475zM885 225h150v270H885z" fill="#f5ca3b" opacity=".92"/>
+  <path d="M85 622h1030" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+  <circle cx="430" cy="650" r="17" fill="#ffffff"/><circle cx="500" cy="650" r="17" fill="#ffffff"/><circle cx="570" cy="650" r="17" fill="#ffffff"/><circle cx="640" cy="650" r="17" fill="#ffffff"/><circle cx="710" cy="650" r="17" fill="#ffffff"/><circle cx="780" cy="650" r="17" fill="#ffffff"/>
+  <text x="600" y="78" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="38" font-weight="700">IMMERSIVE CINEMA · 270°</text>
+</svg>

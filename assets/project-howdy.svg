@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Voice-based AI identity study</title>
+  <desc id="desc">A minimal diagram showing matched and mismatched voice identities across two regions.</desc>
+  <rect width="1200" height="720" fill="#0b1938"/>
+  <circle cx="250" cy="360" r="142" fill="#f5ca3b"/>
+  <circle cx="950" cy="360" r="142" fill="#ffffff"/>
+  <path d="M418 360h364" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-dasharray="4 24"/>
+  <path d="M505 350c24-98 56-98 80 0s56 98 80 0 56-98 80 0" fill="none" stroke="#f5ca3b" stroke-width="18" stroke-linecap="round"/>
+  <text x="250" y="345" text-anchor="middle" fill="#0b1938" font-family="Arial, sans-serif" font-size="34" font-weight="700">AGE</text>
+  <text x="250" y="390" text-anchor="middle" fill="#0b1938" font-family="Arial, sans-serif" font-size="23">VOICE CUE</text>
+  <text x="950" y="345" text-anchor="middle" fill="#0b1938" font-family="Arial, sans-serif" font-size="34" font-weight="700">REGION</text>
+  <text x="950" y="390" text-anchor="middle" fill="#0b1938" font-family="Arial, sans-serif" font-size="23">SOCIAL CUE</text>
+  <text x="600" y="112" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="58" font-weight="700">HOWDY, MY OLD FRIEND!</text>
+  <text x="600" y="635" text-anchor="middle" fill="#c8cfdf" font-family="Arial, sans-serif" font-size="26">VOICE IDENTITY · HOMOPHILY · HUMAN–AI INTERACTION</text>
+</svg>

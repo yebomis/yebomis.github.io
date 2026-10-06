@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>See, Sense, Spark — Yebom Choi</title>
+    <meta
+      name="description"
+      content="See, Sense, Spark: a proactive smart-glasses study of profile granularity, curiosity, and creative research ideation."
+    />
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("yebom-theme");
+        const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = savedTheme || preferredTheme;
+      })();
+    </script>
+    <link rel="stylesheet" href="research-page.css?v=20261006-7" />
+    <style>
+      .feature-figure img,
+      .side-figure img,
+      .figure-pair img { width: 100%; height: auto; max-height: none; object-fit: contain; background: transparent; }
+      .figure-pair { align-items: start; }
+    </style>
+  </head>
+  <body>
+    <header class="paper-nav">
+      <a class="back-link" href="../index.html#pub-sss" aria-label="Back to publications">
+        <span aria-hidden="true">←</span> Yebom Choi
+      </a>
+      <div class="nav-actions">
+        <a href="#system">System</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#follow-up">Follow-up</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme">
+          <span aria-hidden="true">☾</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="paper-hero page-width">
+        <p class="venue">SIGGRAPH Asia 2025 Posters · Proactive AI · Smart Glasses</p>
+        <h1>See, Sense, Spark</h1>
+        <p class="subtitle">Profiling Granularity in Proactive AI for Creative Research Ideation</p>
+        <p class="authors">Gahui Kim* · <strong>Yebom Choi*</strong> · Changjun Lee <span>*Equal contribution</span></p>
+
+        <div class="abstract-block">
+          <p class="section-label">Abstract</p>
+          <p>
+            Proactive AI systems are a new paradigm for supporting cognitively demanding tasks by anticipating user needs and providing
+            timely interventions. While prior creativity research often suggests that broad, less constrained information cues can enhance
+            associative flexibility, it remains unclear how deeply these systems should understand users to improve their thinking. This paper
+            explores the psychological effects of profiling granularity on creative research ideation. Using a proactive AI system called See,
+            Sense, Spark, we conducted a between-subjects study comparing coarse and fine-grained user profiling. Contrary to our initial
+            hypothesis, participants with fine-grained profiles showed significantly higher I-type curiosity. This result establishes profiling
+            granularity as a core design parameter for proactive AI, highlighting that topical relevance can outweigh breadth in stimulating
+            exploratory reasoning. We conclude by suggesting the need for adaptive systems that can balance both breadth and relevance to foster
+            meaningful human-AI collaboration in complex cognitive tasks.
+          </p>
+        </div>
+
+        <div class="hero-question">
+          <span>The central question</span>
+          <p>How much should proactive AI know about you to help you discover an idea you would not have reached alone?</p>
+        </div>
+
+        <div class="paper-actions" aria-label="Research links">
+          <a class="primary-action" href="https://dl.acm.org/doi/full/10.1145/3757374.3771458" target="_blank" rel="noreferrer">Read paper ↗</a>
+          <a href="https://youtu.be/kbhWUENajDM?si=b6m7_Tjsb87YCoGQ" target="_blank" rel="noreferrer">Watch demo ↗</a>
+          <a href="#citation">Citation</a>
+        </div>
+      </section>
+
+      <section class="paper-summary page-width" aria-label="Research summary">
+        <p class="section-label">In one minute</p>
+        <div class="summary-grid">
+          <h2>The same room can become a different idea space depending on what the AI knows about its user.</h2>
+          <div>
+            <p>
+              We built a smart-glasses system that notices objects in the environment and turns them into short research provocations.
+              We compared a coarse researcher profile with a fine-grained one to see how personal context changes curiosity,
+              perceived agency, and the form of the ideas that AI offers.
+            </p>
+            <p>
+              Fine-grained profiles increased interest-driven curiosity in the original study. A larger follow-up then revealed a more
+              careful lesson: broader AI output does not automatically become broader human thinking.
+            </p>
+            <p>
+              Together, the studies treat personalization as more than a relevance setting. The amount of user information available to the
+              system changes where it searches, how it frames an object, and what kind of cognitive work remains for the person.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="system" class="paper-section page-width">
+        <div class="section-heading">
+          <p class="section-label">The system</p>
+          <h2>The environment supplied the cue. Profile depth shaped what the system did with it.</h2>
+          <p>
+            A first-person camera captured the scene. The system identified a primary object, searched for a peripheral connection,
+            generated candidate provocations, and delivered only ideas that passed a novelty–relevance scoring gate.
+          </p>
+          <p>
+            Each candidate was evaluated for novelty, disciplinary alignment, delight, utility, and exploration potential. This filtering step
+            was important: proactive assistance should contribute at the right moment without turning the visual field into a stream of noise.
+          </p>
+        </div>
+
+        <figure class="feature-figure">
+          <img src="../assets/detail/sss/overview.png" alt="Profile granularity and proactive ideation system pipeline" />
+          <figcaption>The proactive pipeline connected visible objects, researcher context, and short prompts delivered through smart glasses.</figcaption>
+        </figure>
+
+        <div class="condition-grid" aria-label="Profile conditions">
+          <article>
+            <span>Coarse profile</span>
+            <h3>Enough context to orient the AI</h3>
+            <p>Academic degree and discipline gave the system a broad starting point while leaving more room to search beyond a current topic.</p>
+          </article>
+          <article>
+            <span>Fine-grained profile</span>
+            <h3>Enough context to stay close to the researcher</h3>
+            <p>Research keywords, venues, and current focus helped the system connect unfamiliar objects to an existing line of inquiry.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="paper-section paper-section-tint">
+        <div class="page-width split-section">
+          <div class="section-heading compact">
+            <p class="section-label">The comparison</p>
+            <h2>Researchers walked through the same space with the same system—only the profile policy changed.</h2>
+            <p>
+              Participants explored a physical room for fifteen minutes while receiving environment-aware micro-prompts. Afterward, we
+              measured curiosity, usefulness, trust, satisfaction, and epistemic agency, then examined how participants described the experience.
+            </p>
+            <p>
+              The room, device, interaction time, and prompt-delivery process remained constant. Only the profile policy changed, allowing us
+              to examine how the specificity of personal context altered the psychological experience of the same proactive system.
+            </p>
+            <dl class="study-facts">
+              <div><dt>Original study</dt><dd>20 recruited · 17 analyzed</dd></div>
+              <div><dt>Interaction</dt><dd>15-minute situated exploration</dd></div>
+              <div><dt>Conditions</dt><dd>Coarse vs. fine-grained profiles</dd></div>
+              <div><dt>System</dt><dd>Xreal Air 2 Pro · Gemini pipeline</dd></div>
+            </dl>
+          </div>
+          <figure class="side-figure">
+            <img src="../assets/detail/sss/poster.png" alt="See Sense Spark poster showing the system and study" />
+            <figcaption>Participants encountered prompts while moving through a shared physical environment.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="evidence" class="paper-section page-width">
+        <div class="section-heading">
+          <p class="section-label">What changed</p>
+          <h2>More personal context increased interest-driven curiosity—but personalization did not improve every outcome.</h2>
+          <p>
+            Fine-grained profiles produced higher I-type curiosity, with a large effect, and a marginal increase in epistemic agency.
+            Coarse-profile participants more often described prompts in pragmatic, utility-oriented terms. Satisfaction and trust did not
+            separate as clearly.
+          </p>
+          <p>
+            The pattern challenged our initial prediction that broader, less constrained cues would be more stimulating. For this task,
+            topical relevance appears to have helped participants stay engaged long enough to explore a suggestion rather than merely notice it.
+          </p>
+        </div>
+
+        <div class="result-numbers" aria-label="Key results">
+          <article><strong>1.30</strong><span>Cohen’s d for I-type curiosity</span></article>
+          <article><strong>.016</strong><span>p-value for the curiosity difference</span></article>
+          <article><strong>.98</strong><span>marginal effect size for epistemic agency</span></article>
+        </div>
+
+        <figure class="feature-figure result-figure">
+          <img src="../assets/detail/sss/figure-1.png" alt="System-level effects of profile granularity" />
+          <figcaption>Curiosity and agency shifted more clearly than broad satisfaction or trust.</figcaption>
+        </figure>
+      </section>
+
+      <section id="follow-up" class="paper-section follow-up-section">
+        <div class="page-width">
+          <div class="follow-up-heading">
+            <p class="section-label">The study evolved · Full paper submitted to CHI 2027</p>
+            <h2><em>How Much Should Proactive AI Know About Its User?</em> tests whether broader AI output actually broadens human ideas.</h2>
+            <p>
+              The SIGGRAPH Asia poster established profile granularity as a psychological design parameter: fine-grained profiles increased
+              interest-driven curiosity. The full-paper follow-up expands the question from how users <em>felt</em> to what the system generated
+              and what people ultimately developed into ideas. It studied 26 researchers and 24 complete interaction logs.
+            </p>
+            <p>
+              Peripheral-object content appeared in 42% of coarse-profile suggestions versus 4% of fine-profile suggestions, while new
+              interpretive frames appeared in 86% versus 26%. Fine-grained sessions instead retained factual-slot content more often, showing
+              that the two policies changed the form of support even when prompt activity was similar.
+            </p>
+            <p>
+              We describe this cross-level separation as the <strong>system–participant divergence gap</strong>. It is not evidence that people
+              failed to use the AI. It is evidence that system-level variety should not be treated as a proxy for human creative breadth.
+            </p>
+          </div>
+
+          <div class="followup-delta-grid" aria-label="What the follow-up adds">
+            <article><span>Evidence</span><strong>Psychological outcomes → system output + human ideation</strong></article>
+            <article><span>Sample</span><strong>17 analyzed → 26 recruited and 24 complete logs</strong></article>
+            <article><span>Mechanism</span><strong>Profile condition → object use and interpretive framing</strong></article>
+            <article><span>Core finding</span><strong>Curiosity effect → system–participant divergence gap</strong></article>
+          </div>
+
+          <div class="figure-pair">
+            <figure>
+              <img src="../assets/detail/sss/figure-2.png" alt="Knowledge-slot differences between coarse and fine-grained profiles" />
+              <figcaption>Coarse profiles diversified the system’s environmental search and framing.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/detail/sss/figure-3.png" alt="Participant-level research ideation outcomes" />
+              <figcaption>The wider system search did not transfer cleanly into wider participant output.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="paper-section page-width conclusion-grid">
+        <div class="section-heading compact">
+          <p class="section-label">What this changes</p>
+          <h2>Creative AI needs both exploratory distance and a way back to the person.</h2>
+          <p>
+            Profile granularity is not simply a privacy setting. It changes whether proactive AI searches across distant objects and frames or
+            works more deeply within a researcher’s existing domain. The useful setting may therefore change across phases of creative work.
+          </p>
+          <p>
+            A system might begin broadly during exploration, then introduce more detailed profile context when a user chooses an idea to
+            elaborate. Evaluations should likewise separate what the model generated from what the person ultimately understood, selected, and
+            developed into their own question.
+          </p>
+        </div>
+        <ol class="design-lessons">
+          <li><span>01</span><p><strong>Measure both levels.</strong> Diverse model output is not evidence of diverse human thought.</p></li>
+          <li><span>02</span><p><strong>Connect distance to ownership.</strong> Surprise matters only when a person can interpret and reshape it.</p></li>
+          <li><span>03</span><p><strong>Adapt over time.</strong> Coarse context may support exploration; fine context may help elaborate an idea.</p></li>
+        </ol>
+      </section>
+
+      <section id="citation" class="citation-section page-width">
+        <div>
+          <p class="section-label">Citation</p>
+          <p>Kim, G., Choi, Y., &amp; Lee, C. (2025). <em>See, Sense, Spark: Profiling Granularity in Proactive AI for Creative Research Ideation.</em> SIGGRAPH Asia 2025 Posters, Article 12, 1–3.</p>
+          <a href="https://doi.org/10.1145/3757374.3771458" target="_blank" rel="noreferrer">https://doi.org/10.1145/3757374.3771458 ↗</a>
+        </div>
+        <a class="next-work" href="../index.html#publications"><span>Explore all publications</span><strong>Back to the research collection →</strong></a>
+      </section>
+    </main>
+
+    <footer class="paper-footer">
+      <span>Yebom Choi</span>
+      <a href="mailto:yebom618@g.skku.edu">yebom618@g.skku.edu</a>
+    </footer>
+    <script src="research-page.js?v=20261004-1"></script>
+  </body>
+</html>
