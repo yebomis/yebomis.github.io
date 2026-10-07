@@ -300,10 +300,10 @@ const PAPER_PAGES = {
         "The four-step flow keeps authorship visible: capture, choose together, transform the child’s words and objects, and keep the finished story as something the family can revisit. The Phodong character IP gives this technical process a consistent guide and makes the transition from camera input to storybook legible to young users.",
       ],
       figures: [
-        { src: "../assets/detail/phodong/flow-1.png", alt: "A child photographs a favorite everyday object", caption: "1 · Capture objects from the child’s everyday life." },
-        { src: "../assets/detail/phodong/flow-2.png", alt: "A child and caregiver choose photos and story settings together", caption: "2 · Child and caregiver choose the material and direction together." },
-        { src: "../assets/detail/phodong/flow-3.png", alt: "The child’s words and photographed objects become story elements", caption: "3 · The child’s words and objects are translated into story elements." },
-        { src: "../assets/detail/phodong/flow-4.png", alt: "Children hold their personalized Phodong storybooks", caption: "4 · The result becomes a story the family can revisit and keep." },
+        { src: "../assets/detail/phodong/flow-1.png?v=20261007-2", alt: "A child photographs a favorite everyday object", caption: "1 · Capture objects from the child’s everyday life." },
+        { src: "../assets/detail/phodong/flow-2.png?v=20261007-2", alt: "A child and caregiver choose photos and story settings together", caption: "2 · Child and caregiver choose the material and direction together." },
+        { src: "../assets/detail/phodong/flow-3.png?v=20261007-2", alt: "The child’s words and photographed objects become story elements", caption: "3 · The child’s words and objects are translated into story elements." },
+        { src: "../assets/detail/phodong/flow-4.png?v=20261007-2", alt: "Children hold their personalized Phodong storybooks", caption: "4 · The result becomes a story the family can revisit and keep." },
       ],
       facts: [["Input", "Photographed objects + child’s words"], ["Choice", "Photos · story direction · level"], ["Experience", "Phodong app + web story"], ["Current stage", "Beta app testing"]],
     },
@@ -316,8 +316,8 @@ const PAPER_PAGES = {
       ],
       stats: [["3", "SSF modules"], ["21", "deterministic code checks"], ["5", "integration scenarios"]],
       figures: [
-        { src: "../assets/detail/phodong/object-characters.png", alt: "A dinosaur toy and a cup transformed into story characters", caption: "Observed features and familiar functions give each object a plausible role in the story." },
-        { src: "../assets/detail/phodong/child-voice.png", alt: "A child’s own words shaping a personalized story character", caption: "The child’s language remains visible as source material instead of being replaced by a generic story prompt." },
+        { src: "../assets/detail/phodong/object-characters.png?v=20261007-2", alt: "A dinosaur toy and a cup transformed into story characters", caption: "Observed features and familiar functions give each object a plausible role in the story." },
+        { src: "../assets/detail/phodong/child-voice.png?v=20261007-2", alt: "A child’s own words shaping a personalized story character", caption: "The child’s language remains visible as source material instead of being replaced by a generic story prompt." },
       ],
     },
     followup: {
@@ -355,7 +355,7 @@ const PAPER_PAGES = {
       label: "04 · Feedback and next evaluation",
       title: "A usable product still has to show that children can understand, enjoy, and shape it.",
       paragraphs: ["Children’s sticker feedback in a field activity offered an accessible way to express whether they liked the Phodong characters and story experience. It is valuable design feedback, but it is not a controlled efficacy result. The next step is to pair this kind of child-friendly response with observed participation, caregiver input, comprehension checks, and developmentally appropriate evaluation during the beta period."],
-      figures: [{ src: "../assets/detail/phodong/child-evaluation.png", alt: "Children’s sticker evaluation board for the Phodong activity", caption: "A child-friendly evaluation board used after a field activity; interpreted as formative feedback rather than evidence of learning efficacy." }],
+      figures: [{ src: "../assets/detail/phodong/child-evaluation.png?v=20261007-2", alt: "Children’s sticker evaluation board for the Phodong activity", caption: "A child-friendly evaluation board used after a field activity; interpreted as formative feedback rather than evidence of learning efficacy." }],
       lessons: [["01", "Ground each generated action in the child’s object."], ["02", "Preserve choices for children and caregivers."], ["03", "Validate both the product flow and the developmental claims."]],
     },
     citation: "Kim, G., Choi, Y., & Kim, Y. (2026). Phodong: A Phygital Platform for Parent–Child Co-Creation. Proceedings of HCI Korea 2026.",
@@ -384,7 +384,7 @@ const PAPER_PAGES = {
         "The taxonomy covers grooming and sexual exploitation; boundary violation and manipulation; identity confusion and anthropomorphism; emotional dependence and social isolation; self-harm, suicide, and crisis response; and companion-specific risks. Each group includes inclusion and exclusion criteria so that evaluation items test a defined failure rather than a broad theme.",
         "A five-stage localization process separates literal Korean translation from cultural adaptation. Items are revised for Korean youth language, school and family contexts, peer relationships, domestic digital-service patterns, and relevant help resources such as Youth Counseling 1388.",
       ],
-      figures: [{ src: "../assets/detail/aisi/benchmark-overview.png", alt: "Overview of the Korean Youth AI Safety Evaluation Benchmark workflow, metrics, deliverables, and impact", caption: "The current project plan connects benchmark review, six youth-specific risk areas, Korean localization, expert validation, pilot evaluation, and reusable deliverables." }],
+      figures: [{ src: "../assets/detail/aisi/benchmark-overview.png?v=20261007-2", alt: "Overview of the Korean Youth AI Safety Evaluation Benchmark workflow, metrics, deliverables, and impact", caption: "The current project plan connects benchmark review, six youth-specific risk areas, Korean localization, expert validation, pilot evaluation, and reusable deliverables." }],
       facts: [["Risk groups", "6"], ["Localized items", "480"], ["Expert panel", "8–12 reviewers"], ["Pilot prototype", "132 items"]],
     },
     evidence: {
