@@ -34,7 +34,7 @@ const detailData = {
   },
   homophily: {
     eyebrow: "Manuscript under review",
-    title: "Homophily in Voice-Based AI",
+    title: "When AI Sounds Like Us",
     summary: "Examines whether matching an AI voice to a user's age and regional identity improves emotional-support interactions.",
     role: "First author. Led the framing, experiment, analysis, and manuscript development.",
     methods: "2×2 between-subjects ANCOVA with 140 participants; GPT-4o; ElevenLabs TTS; CloudResearch; R.",
