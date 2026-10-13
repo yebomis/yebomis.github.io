@@ -184,6 +184,7 @@ const PAPER_PAGES = {
     abstract: "Voice conveys social identity as well as content, making age and regional cues potentially consequential when users seek emotional support from AI. Drawing on homophily and social identity perspectives, this study examines whether congruence between users and a generative voice agent shapes relational perceptions and user experience. In an online 2 × 2 between-subjects experiment, 140 younger and older adults from Texas and New York were assigned to one of four male-voiced agents, all named Sam, crossing younger versus older and Texas versus New York personas. Participants held an approximately six-and-a-half-minute emotional support conversation and then evaluated perceived similarity, emotional trust, message acceptance, enjoyment, usefulness, attitude toward use, and satisfaction. The findings provide preliminary evidence of conditional voice-agent homophily, with no evidence of a universal congruence advantage. In planned subgroup analyses, age-congruent agents received more favorable evaluations from older adults on usefulness, attitude toward use, and satisfaction. Older adults’ satisfaction was highest when both age and regional cues were congruent, indicating a provisional two-cue pattern. Regional congruence showed a different pattern: among Texas participants, it increased perceived similarity without producing broad improvements across user-experience outcomes. These results suggest that age and regional cues operate as distinct social signals whose relevance depends on the user group. Voice-agent personalization should therefore offer socially responsive choices while avoiding simplistic demographic matching or exaggerated identity cues.",
     question: "Does a voice that sounds like us actually support us better—or does resemblance only change the first impression?",
     links: [{ label: "Watch demo ↗", url: "https://youtu.be/fIHGNQhxkyE?si=cRXqr7V3E5IYFjcp", primary: true }],
+    presentation: { youtubeId: "fIHGNQhxkyE", title: "When AI Sounds Like Us research presentation" },
     summaryTitle: "A familiar voice can reduce social distance, but similarity is not a universal shortcut to trust.",
     summary: [
       "Voice communicates age, place, pace, and interpersonal stance before a listener fully evaluates what an agent says. This study tests whether two identity cues—age and region—make an emotional-support agent feel more similar and more useful.",
@@ -428,6 +429,7 @@ const PAPER_PAGES = {
     abstract: "AI companions are increasingly encountered as bodies that share space, respond, and appear available for interaction. This study examines whether physical co-presence changes how people implicitly construe an AI’s mind: Agency, or the capacity to act and intend, and Experience, or the capacity to feel. We also ask whether these mind attributions become linked to moral attribution: Moral Agency, meaning responsibility and accountability, and Moral Patiency, meaning care and vulnerability. In a between-subjects experiment (N = 69; Physical n = 36, Virtual n = 33), participants interacted for 10 minutes with the same compact desktop companion robot platform either as a physically co-present robot or as a matched screen-based avatar, using structured and free conversation about everyday topics. They completed Single-Category Implicit Association Tests before and after the interaction, along with explicit post-interaction ratings. Participants did not explicitly attribute greater mind or moral standing to the physical robot. Implicit measures, however, showed a selective pattern: physical co-presence increased Experience attribution (g = .63, p = .012), did not increase Agency attribution (p = .901), and made Agency change predictive of Moral Agency only in the physical condition (interaction β = .525, p = .031). The findings show that a brief co-present encounter can reveal implicit shifts in how AI is associated with feeling and responsibility after only a short everyday interaction, even when explicit ratings remain unchanged. For HRI, this points to physical co-presence as a design condition that can shape where responsibility is implicitly placed before such changes are visible in self-report.",
     question: "When the same AI moves from a screen onto the desk, does its agency begin to feel morally real?",
     links: [{ label: "Read thesis ↗", url: "https://drive.google.com/file/d/15OSB0PZW5pRxiBokRwO81X-npxQyx_QA/view?usp=sharing", primary: true }],
+    presentation: { youtubeId: "iJNP2CHBXho", title: "On the Desk research presentation" },
     summaryTitle: "A body may change not what we say about AI, but how its actions register before reflection.",
     summary: [
       "People readily deny that current AI has a mind, yet still orient toward a robot’s gaze, movement, and proximity. I wanted to know whether putting an otherwise matched agent into shared physical space changes associations that participants may not report directly.",
@@ -577,6 +579,19 @@ function renderParagraphs(paragraphs = []) {
   return paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
 }
 
+function renderPresentation(presentation) {
+  if (!presentation?.youtubeId) return "";
+  return `<section class="paper-video page-width" aria-labelledby="presentation-title">
+    <div class="section-heading">
+      <p class="section-label">Research presentation</p>
+      <h2 id="presentation-title">Watch the study presentation</h2>
+    </div>
+    <div class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/${presentation.youtubeId}" title="${presentation.title}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </section>`;
+}
+
 function renderPaper(page) {
   document.title = `${page.title} — Yebom Choi`;
   const description = document.querySelector('meta[name="description"]');
@@ -604,6 +619,8 @@ function renderPaper(page) {
       <p class="section-label">In one minute</p>
       <div class="summary-grid"><h2>${page.summaryTitle}</h2><div>${renderParagraphs(page.summary)}</div></div>
     </section>
+
+    ${renderPresentation(page.presentation)}
 
     ${page.trajectory ? `<section class="research-trajectory page-width" aria-label="Research trajectory">
       ${page.trajectory.map(([number, venue, title, text]) => `<article><span>${number}</span><p>${venue}</p><h3>${title}</h3><div>${text}</div></article>`).join("")}
