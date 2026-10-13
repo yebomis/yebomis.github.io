@@ -115,8 +115,9 @@ const PAPER_PAGES = {
     question: "If an AI companion must disappear, can two minutes of warning make the ending meaningfully less painful?",
     links: [
       { label: "Read paper ↗", url: "https://dl.acm.org/doi/pdf/10.1145/3772363.3798687", primary: true },
-      { label: "Watch presentation ↗", url: "https://www.youtube.com/watch?v=-on3bzh-Ils" },
+      { label: "Watch presentation ↗", url: "https://youtu.be/VbXlg3Xxh0g?si=0kWh8hS35E6_chM7" },
     ],
+    presentation: { youtubeId: "VbXlg3Xxh0g", title: "No Time to Say Goodbye research presentation" },
     summaryTitle: "Most AI research studies how relationships begin. We studied how they end.",
     summary: [
       "People can disclose personal experiences and build routines with conversational AI, yet a shutdown, model change, or lost account can end that relationship without warning. The project tests whether a small piece of interaction design can protect users at that vulnerable moment.",
@@ -287,6 +288,8 @@ const PAPER_PAGES = {
     links: [
       { label: "Visit Phodong ↗", url: "https://phodong-41b73.web.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio", primary: true },
       { label: "Read paper ↗", url: "https://www.dbpia.co.kr/journal/voisDetail?voisId=VOIS00810329" },
+      { label: "News feature ↗", url: "https://www.spressnews.com/news/articleView.html?idxno=139091" },
+      { label: "Download on App Store ↗", url: "https://apps.apple.com/kr/app/phodong/id6768927655" },
     ],
     summaryTitle: "One technical core connects the research paper, the product, and the educational program.",
     summary: [
