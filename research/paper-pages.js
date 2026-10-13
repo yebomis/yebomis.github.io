@@ -429,7 +429,11 @@ const PAPER_PAGES = {
     abstract: "AI companions are increasingly encountered as bodies that share space, respond, and appear available for interaction. This study examines whether physical co-presence changes how people implicitly construe an AI’s mind: Agency, or the capacity to act and intend, and Experience, or the capacity to feel. We also ask whether these mind attributions become linked to moral attribution: Moral Agency, meaning responsibility and accountability, and Moral Patiency, meaning care and vulnerability. In a between-subjects experiment (N = 69; Physical n = 36, Virtual n = 33), participants interacted for 10 minutes with the same compact desktop companion robot platform either as a physically co-present robot or as a matched screen-based avatar, using structured and free conversation about everyday topics. They completed Single-Category Implicit Association Tests before and after the interaction, along with explicit post-interaction ratings. Participants did not explicitly attribute greater mind or moral standing to the physical robot. Implicit measures, however, showed a selective pattern: physical co-presence increased Experience attribution (g = .63, p = .012), did not increase Agency attribution (p = .901), and made Agency change predictive of Moral Agency only in the physical condition (interaction β = .525, p = .031). The findings show that a brief co-present encounter can reveal implicit shifts in how AI is associated with feeling and responsibility after only a short everyday interaction, even when explicit ratings remain unchanged. For HRI, this points to physical co-presence as a design condition that can shape where responsibility is implicitly placed before such changes are visible in self-report.",
     question: "When the same AI moves from a screen onto the desk, does its agency begin to feel morally real?",
     links: [{ label: "Read thesis ↗", url: "https://drive.google.com/file/d/15OSB0PZW5pRxiBokRwO81X-npxQyx_QA/view?usp=sharing", primary: true }],
-    presentation: { youtubeId: "iJNP2CHBXho", title: "On the Desk research presentation" },
+    presentation: {
+      youtubeId: "iJNP2CHBXho",
+      title: "On the Desk research presentation",
+      note: "This video was originally prepared for a CHI submission; the work was not accepted at CHI.",
+    },
     summaryTitle: "A body may change not what we say about AI, but how its actions register before reflection.",
     summary: [
       "People readily deny that current AI has a mind, yet still orient toward a robot’s gaze, movement, and proximity. I wanted to know whether putting an otherwise matched agent into shared physical space changes associations that participants may not report directly.",
@@ -581,14 +585,12 @@ function renderParagraphs(paragraphs = []) {
 
 function renderPresentation(presentation) {
   if (!presentation?.youtubeId) return "";
-  return `<section class="paper-video page-width" aria-labelledby="presentation-title">
-    <div class="section-heading">
-      <p class="section-label">Research presentation</p>
-      <h2 id="presentation-title">Watch the study presentation</h2>
-    </div>
+  return `<section class="paper-video page-width" aria-label="Research presentation">
+    <p class="section-label">Research presentation</p>
     <div class="video-embed">
       <iframe src="https://www.youtube-nocookie.com/embed/${presentation.youtubeId}" title="${presentation.title}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
+    ${presentation.note ? `<p class="video-note">${presentation.note}</p>` : ""}
   </section>`;
 }
 
