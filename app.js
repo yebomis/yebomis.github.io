@@ -173,7 +173,7 @@ const detailData = {
   },
   embodiment: {
     eyebrow: "Master's thesis · HRI full paper in submission",
-    title: "When AI Has a Body",
+    title: "On the Desk",
     summary: "Tests whether a physically embodied desktop robot changes implicit mind perception and moral attribution compared with a virtual agent.",
     role: "Sole author and principal investigator. Developed the theory, experimental system, study, analysis, and thesis.",
     methods: "50 participants; 2×2 mixed design; SC-IAT; mixed ANOVA; mediation and path analysis in R/lavaan.",
@@ -910,4 +910,11 @@ document.addEventListener("keydown", (event) => {
 
 detailDialog?.addEventListener("click", (event) => {
   if (event.target === detailDialog) detailDialog.close();
+});
+
+const publicationList = document.querySelector("#publications .publication-list");
+const featuredPublicationOrder = ["pub-sss", "pub-phodong", "pub-on-the-desk", "pub-benevolence", "pub-goodbye"];
+featuredPublicationOrder.slice().reverse().forEach((id) => {
+  const card = document.getElementById(id);
+  if (publicationList && card) publicationList.prepend(card);
 });
