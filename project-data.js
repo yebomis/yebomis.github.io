@@ -92,13 +92,13 @@ window.projectDetails = {
   nhis: {
     eyebrow: "Public-sector research · National Health Insurance Service",
     title: "Media & Social Media Issue Analysis on National Health Insurance",
-    summary: "A recurring quarterly project tracking how the National Health Insurance Service was framed across news and online media, then translating those traces into actionable issue narratives.",
-    role: "Research assistant responsible for news crawling across 10 major Korean outlets and for analysis, interpretation, and report development.",
-    methods: "Python scraping; Korean NLP preprocessing; TF-IDF; semantic co-occurrence networks; KoBERTopic/LDA; cross-outlet and time-series comparison.",
-    finding: "Quarterly reports connected keyword and topic patterns to policy events, public concerns, and strategic communication implications.",
+    summary: "A Q3 2023 media-big-data study for the National Health Insurance Service, tracing emerging issues across mass media and social discussion and translating 151,150 collected records into interpretable public-communication insight.",
+    role: "Research assistant contributing to multi-channel collection, Korean-text preprocessing, topic modeling, sentiment and network analysis, interpretation, and report development.",
+    methods: "17,041 news articles; 134,109 social comments; crawling, BIG Kinds, and APIs; Korean NLP; topic modeling; sentiment analysis; text-network analysis.",
+    finding: "The analysis connected major topics, positive and negative discussion patterns, and network relationships to the policy context surrounding national health insurance and long-term care.",
     image: "assets/detail/nhis/thumbnail.png",
     caseStudy: {
-      meta: ["Quarterly research", "NHIS client project", "10 news outlets", "News + video + social data"],
+      meta: ["Q3 2023", "NHIS client project", "17,041 news articles", "134,109 comments"],
       map: [
         { label: "Need", title: "See public issues before they harden" },
         { label: "Collect", title: "Build a repeatable media corpus" },
@@ -107,8 +107,8 @@ window.projectDetails = {
         { label: "Report", title: "Deliver quarterly communication insight" },
       ],
       role: {
-        title: "I owned the news-data lane and stayed involved through interpretation.",
-        body: "I built and ran collection workflows for 10 major Korean press outlets, participated in preprocessing and quantitative analysis, and helped translate model outputs into issue narratives for the client-facing quarterly reports.",
+        title: "I contributed across collection, analysis, and interpretation.",
+        body: "I supported the media-big-data workflow from multi-channel collection and Korean-text preprocessing through topic, sentiment, and network analysis, then helped translate those outputs into issue narratives for the client report.",
         tags: ["Python scraping", "Korean NLP", "TF-IDF", "Semantic networks", "Topic modeling", "Policy interpretation"],
       },
       sections: [
@@ -126,24 +126,24 @@ window.projectDetails = {
         {
           key: "collect",
           label: "02 · Collection",
-          title: "I built a consistent news corpus across 10 major Korean outlets.",
+          title: "The corpus combined a broad press sample with public response around the same issues.",
           paragraphs: [
-            "I developed and ran keyword-based scraping workflows to collect article titles, dates, sources, and full text. The wider project also incorporated YouTube metadata, comments, social media, and online communities.",
-            "Consistent fields and quarter-level archives made it possible to compare sources and time windows without losing the context of individual news cycles.",
+            "Mass-media coverage included five broadcasters, 11 national dailies, eight economic dailies, 28 regional dailies, 13 health and medical outlets, two specialist publications, and 30 official news YouTube channels. Social discussion included YouTube and Naver News comments from 30 media organizations.",
+            "Nine keyword groups captured three institutional topics and their common variants: National Health Insurance, Long-Term Care Insurance, and the National Health Insurance Service. Crawling, BIG Kinds, and APIs produced 17,041 mass-media articles and 134,109 social-media comments before cleaning.",
           ],
-          visual: { kicker: "Data sources", title: "A multi-channel issue corpus", items: ["10 major press outlets — my primary domain", "YouTube videos and comments", "Social media and online communities"] },
-          caption: "My central responsibility was the press corpus, integrated into a broader media-monitoring project.",
+          visual: { kicker: "Q3 2023 corpus", title: "A multi-channel issue dataset", items: ["17,041 mass-media articles", "134,109 YouTube and Naver comments", "67 press and specialist outlets", "30 official news YouTube channels"] },
+          caption: "The same keyword logic linked institutional coverage and the public discussion surrounding it.",
         },
         {
           key: "analyze",
           label: "03 · Computational pipeline",
-          title: "Each method answered a different question about the same public conversation.",
+          title: "A four-stage process moved from raw records to interpretable issue structure.",
           paragraphs: [
-            "After Korean tokenization, stopword removal, and noise filtering, TF-IDF identified terms that were unusually salient by source and period. Co-occurrence networks exposed how those terms clustered, while KoBERTopic and LDA surfaced broader latent themes.",
-            "Using multiple methods reduced the temptation to treat one ranking or model as the whole story. Agreement and disagreement among outputs became evidence for closer interpretation.",
+            "Collection used crawling, BIG Kinds, and APIs. Cleaning applied Korean natural-language processing, generated network-ready data, and removed duplicate records and advertising comments.",
+            "Analysis combined topic modeling, sentiment analysis, and text-network analysis. Interpretation then examined major topics and keywords, positive and negative discussion around emerging issues, and the contexts revealed by network connections.",
           ],
-          visual: { kicker: "Method stack", title: "From raw articles to issue structure", items: ["Preprocess Korean text", "Rank salience with TF-IDF", "Map semantic co-occurrence", "Model topics with KoBERTopic / LDA"] },
-          caption: "The pipeline combined interpretable lexical measures with relational and latent-topic views.",
+          visual: { kicker: "Analysis process", title: "Collect → clean → analyze → interpret", items: ["Crawling, BIG Kinds, and APIs", "Korean NLP, deduplication, and ad filtering", "Topic, sentiment, and network analysis", "Issue framing and contextual interpretation"] },
+          caption: "Different methods were used as complementary views of the same media conversation.",
         },
         {
           key: "interpret",

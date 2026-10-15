@@ -16,7 +16,7 @@
         document.documentElement.dataset.theme = savedTheme || preferredTheme;
       })();
     </script>
-    <link rel="stylesheet" href="research-page.css?v=20261013-2" />
+    <link rel="stylesheet" href="research-page.css?v=20261015-2" />
     <style>
       .feature-figure img,
       .side-figure img,
@@ -66,11 +66,20 @@
           <p>How much should proactive AI know about you to help you discover an idea you would not have reached alone?</p>
         </div>
 
+        <figure class="feature-figure hero-poster">
+          <img src="../assets/detail/sss/poster.png" alt="See Sense Spark SIGGRAPH Asia poster showing the system and study" />
+          <figcaption>The SIGGRAPH Asia poster presents the system, study design, and original findings together.</figcaption>
+        </figure>
+
         <div class="paper-actions" aria-label="Research links">
           <a class="primary-action" href="https://dl.acm.org/doi/full/10.1145/3757374.3771458" target="_blank" rel="noreferrer">Read paper ↗</a>
-          <a href="https://youtu.be/kbhWUENajDM?si=b6m7_Tjsb87YCoGQ" target="_blank" rel="noreferrer">Watch demo ↗</a>
+          <a href="https://youtu.be/kbhWUENajDM?si=b6m7_Tjsb87YCoGQ" target="_blank" rel="noreferrer">Video ↗</a>
           <a href="#citation">Citation</a>
         </div>
+      </section>
+
+      <section class="paper-video page-width" aria-label="Research presentation">
+        <div class="video-embed"><iframe src="https://www.youtube.com/embed/kbhWUENajDM" title="See, Sense, Spark research presentation" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
       </section>
 
       <section class="paper-summary page-width" aria-label="Research summary">
@@ -107,6 +116,10 @@
             Each candidate was evaluated for novelty, disciplinary alignment, delight, utility, and exploration potential. This filtering step
             was important: proactive assistance should contribute at the right moment without turning the visual field into a stream of noise.
           </p>
+          <div class="scoring-formula" aria-label="Candidate scoring formula">
+            <strong>Score = Novelty × (Alignment with Research + Delight/Aha + Utility + Exploration Potential)</strong>
+            <span>Only candidates scoring 2 or higher were displayed, keeping novelty as a gate rather than simply one additive feature.</span>
+          </div>
         </div>
 
         <figure class="feature-figure">
@@ -148,10 +161,6 @@
               <div><dt>System</dt><dd>Xreal Air 2 Pro · Gemini pipeline</dd></div>
             </dl>
           </div>
-          <figure class="side-figure">
-            <img src="../assets/detail/sss/poster.png" alt="See Sense Spark poster showing the system and study" />
-            <figcaption>Participants encountered prompts while moving through a shared physical environment.</figcaption>
-          </figure>
         </div>
       </section>
 
@@ -176,10 +185,6 @@
           <article><strong>.98</strong><span>marginal effect size for epistemic agency</span></article>
         </div>
 
-        <figure class="feature-figure result-figure">
-          <img src="../assets/detail/sss/figure-1.png" alt="System-level effects of profile granularity" />
-          <figcaption>Curiosity and agency shifted more clearly than broad satisfaction or trust.</figcaption>
-        </figure>
       </section>
 
       <section id="follow-up" class="paper-section follow-up-section">
@@ -209,6 +214,11 @@
             <article><span>Mechanism</span><strong>Profile condition → object use and interpretive framing</strong></article>
             <article><span>Core finding</span><strong>Curiosity effect → system–participant divergence gap</strong></article>
           </div>
+
+          <figure class="feature-figure followup-system-figure">
+            <img src="../assets/detail/sss/figure-1.png" alt="Profile condition, peripheral reach, interpretive variety, and knowledge-slot completion" />
+            <figcaption>The four dot plots locate where profile policy changed system behavior across the full-paper follow-up.</figcaption>
+          </figure>
 
           <div class="figure-pair">
             <figure>

@@ -40,6 +40,7 @@ const PAPER_PAGES = {
     links: [
       { label: "Read paper ↗", url: "https://dl.acm.org/doi/pdf/10.1145/3706599.3719279", primary: true },
       { label: "Earlier study ↗", url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12131515" },
+      { label: "Try the experiment ↗", url: "https://mrg-y1rb.vercel.app/?condition=4&ccode=E88A6AC1F5" },
     ],
     summaryTitle: "The project began with a moral dilemma, not with a finished hypothesis.",
     summary: [
@@ -117,6 +118,7 @@ const PAPER_PAGES = {
       { label: "Read paper ↗", url: "https://dl.acm.org/doi/pdf/10.1145/3772363.3798687", primary: true },
       { label: "Watch presentation ↗", url: "https://youtu.be/VbXlg3Xxh0g?si=0kWh8hS35E6_chM7" },
     ],
+    presentation: { youtubeId: "VbXlg3Xxh0g", title: "No Time to Say Goodbye research presentation" },
     summaryTitle: "Most AI research studies how relationships begin. We studied how they end.",
     summary: [
       "People can disclose personal experiences and build routines with conversational AI, yet a shutdown, model change, or lost account can end that relationship without warning. The project tests whether a small piece of interaction design can protect users at that vulnerable moment.",
@@ -183,7 +185,8 @@ const PAPER_PAGES = {
     authors: "<strong>Yebom Choi</strong> · Sooyeon Kim · Haeyoon Lee · Changjun Lee · Daeho Lee · Doha Kim",
     abstract: "Voice conveys social identity as well as content, making age and regional cues potentially consequential when users seek emotional support from AI. Drawing on homophily and social identity perspectives, this study examines whether congruence between users and a generative voice agent shapes relational perceptions and user experience. In an online 2 × 2 between-subjects experiment, 140 younger and older adults from Texas and New York were assigned to one of four male-voiced agents, all named Sam, crossing younger versus older and Texas versus New York personas. Participants held an approximately six-and-a-half-minute emotional support conversation and then evaluated perceived similarity, emotional trust, message acceptance, enjoyment, usefulness, attitude toward use, and satisfaction. The findings provide preliminary evidence of conditional voice-agent homophily, with no evidence of a universal congruence advantage. In planned subgroup analyses, age-congruent agents received more favorable evaluations from older adults on usefulness, attitude toward use, and satisfaction. Older adults’ satisfaction was highest when both age and regional cues were congruent, indicating a provisional two-cue pattern. Regional congruence showed a different pattern: among Texas participants, it increased perceived similarity without producing broad improvements across user-experience outcomes. These results suggest that age and regional cues operate as distinct social signals whose relevance depends on the user group. Voice-agent personalization should therefore offer socially responsive choices while avoiding simplistic demographic matching or exaggerated identity cues.",
     question: "Does a voice that sounds like us actually support us better—or does resemblance only change the first impression?",
-    links: [{ label: "Watch demo ↗", url: "https://youtu.be/fIHGNQhxkyE?si=cRXqr7V3E5IYFjcp", primary: true }],
+    links: [{ label: "Video ↗", url: "https://youtu.be/fIHGNQhxkyE?si=cRXqr7V3E5IYFjcp", primary: true }],
+    presentation: { youtubeId: "fIHGNQhxkyE", title: "When AI Sounds Like Us research presentation" },
     summaryTitle: "A familiar voice can reduce social distance, but similarity is not a universal shortcut to trust.",
     summary: [
       "Voice communicates age, place, pace, and interpersonal stance before a listener fully evaluates what an agent says. This study tests whether two identity cues—age and region—make an emotional-support agent feel more similar and more useful.",
@@ -197,7 +200,7 @@ const PAPER_PAGES = {
         "All conversations lasted approximately six and a half minutes and followed the same emotional-support structure. GPT-4o generated the dialogue and ElevenLabs produced the voices.",
       ],
       figures: [
-        { src: "../assets/detail/homophily/overview.png", alt: "Conceptual design for voice-agent homophily", caption: "Age and regional congruence were treated as distinct social signals." },
+        { src: "../assets/papers/homophily-method.png", alt: "Conceptual design for voice-agent homophily", caption: "Age and regional congruence were treated as distinct social signals." },
         { src: "../assets/detail/homophily/figure-2.png", alt: "Recruitment groups and voice personas", caption: "The task stayed constant while age and region were crossed." },
       ],
       facts: [["Participants", "140"], ["Design", "2 × 2 between-subjects"], ["Conversation", "Approximately 6.5 minutes"], ["Stack", "GPT-4o · ElevenLabs · R"]],
@@ -283,16 +286,21 @@ const PAPER_PAGES = {
     abstractLabel: "Research, product, and field journey",
     abstract: "Phodong is a connected research and product project built around a simple idea: a child’s everyday objects can become material for stories they make with other people. Its Semantic Storification Framework (SSF) separates what can be observed in a photographed object from what the object usually does, turns those grounded features into an age-adjusted problem and solution, and checks the generated story before it is saved. That technical core supports the Phodong character IP, a child–caregiver app and web experience, and educational activities used in workshops and public programs. The project has also moved through crowdfunding and the U300 student-startup program and is now in beta app testing. Across these forms, the goal remains the same: use AI to open a creative exchange rather than finish the story for the child.",
     question: "Can AI help a family build a story together without taking the story away from them?",
+    heroFigures: [
+      { src: "../assets/detail/phodong/object-characters.png?v=20261007-2", alt: "A dinosaur toy and a cup transformed into story characters", caption: "Everyday objects become grounded characters while their recognizable features and functions remain visible." },
+      { src: "../assets/detail/phodong/child-voice.png?v=20261007-2", alt: "A child’s own words shaping a personalized story character", caption: "The child’s words remain source material for the story instead of being replaced by a generic prompt." },
+    ],
     links: [
       { label: "Visit Phodong ↗", url: "https://phodong-41b73.web.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio", primary: true },
       { label: "Read paper ↗", url: "https://www.dbpia.co.kr/journal/voisDetail?voisId=VOIS00810329" },
       { label: "News feature ↗", url: "https://www.spressnews.com/news/articleView.html?idxno=139091" },
       { label: "Download on App Store ↗", url: "https://apps.apple.com/kr/app/phodong/id6768927655" },
     ],
-    summaryTitle: "One technical core connects the research paper, the product, and the educational program.",
+    summaryTitle: "Phodong carries one idea from a technical framework to a product, field program, and growing venture.",
     summary: [
-      "SSF is the generative and validation layer: it grounds story actions in photographed objects and adjusts language and event complexity to a selected developmental level. Phodong is the experience layer: a character IP and an app/web product that make the process understandable and inviting for families.",
-      "Field workshops, exhibitions, crowdfunding, U300, and beta testing are not separate side projects. Each one tests a different question—whether children can enter the story, whether caregivers can guide without taking over, and whether the research prototype can survive outside a controlled demonstration.",
+      "Phodong began as an application concept: could a vision-based system recognize the objects children care about and turn those objects—together with the child’s own language—into story material that invites participation? We developed the Semantic Storification Framework (SSF) to ground generated actions in observable features and familiar functions, then wrapped that framework in the Phodong character IP and an app/web experience for children and caregivers.",
+      "Recognition at HCI Korea became a launch point rather than an endpoint. The project moved into workshops, exhibitions, crowdfunding, and a government-supported student-startup program, where research claims had to become an understandable and usable service. Phodong is now being refined through beta testing and field use with children, parents, educators, and instructors.",
+      "Together, these stages form one continuous flow: technical framework, child–caregiver product, educational content, public demonstration, venture development, and real-world evaluation. Each stage asks whether AI can expand a child’s creative participation while leaving meaningful choices with the child and the adults supporting them.",
     ],
     system: {
       label: "01 · From object to story",
@@ -314,13 +322,9 @@ const PAPER_PAGES = {
       title: "SSF keeps generated stories grounded, development-aware, and repairable.",
       paragraphs: [
         "SSF separates three jobs. The Semantic Object Interpreter records observable traits, distinguishes them from an object’s general function, and asks for caregiver confirmation when identification is uncertain. The Narrative Prompt Architect builds a safe problem that can actually be solved through those traits or functions. The Developmental Language Adapter controls language, participating objects, and solution steps for the selected level.",
-        "A second pass checks whether each object contributes to the resolution, whether the cited feature is present in the input, and whether the story stays within the selected complexity limits. Local problems can be repaired only on the affected page and its neighbors; broader causal problems trigger regeneration. The current thresholds are engineering defaults under evaluation, not claims of validated developmental efficacy.",
       ],
-      stats: [["3", "SSF modules"], ["21", "deterministic code checks"], ["5", "integration scenarios"]],
-      figures: [
-        { src: "../assets/detail/phodong/object-characters.png?v=20261007-2", alt: "A dinosaur toy and a cup transformed into story characters", caption: "Observed features and familiar functions give each object a plausible role in the story." },
-        { src: "../assets/detail/phodong/child-voice.png?v=20261007-2", alt: "A child’s own words shaping a personalized story character", caption: "The child’s language remains visible as source material instead of being replaced by a generic story prompt." },
-      ],
+      stats: [],
+      figures: [],
     },
     followup: {
       label: "03 · Product, field use, and venture translation",
@@ -356,9 +360,9 @@ const PAPER_PAGES = {
     implication: {
       label: "04 · Feedback and next evaluation",
       title: "A usable product still has to show that children can understand, enjoy, and shape it.",
-      paragraphs: ["Children’s sticker feedback in a field activity offered an accessible way to express whether they liked the Phodong characters and story experience. It is valuable design feedback, but it is not a controlled efficacy result. The next step is to pair this kind of child-friendly response with observed participation, caregiver input, comprehension checks, and developmentally appropriate evaluation during the beta period."],
-      figures: [{ src: "../assets/detail/phodong/child-evaluation.png?v=20261007-2", alt: "Children’s sticker evaluation board for the Phodong activity", caption: "A child-friendly evaluation board used after a field activity; interpreted as formative feedback rather than evidence of learning efficacy." }],
-      lessons: [["01", "Ground each generated action in the child’s object."], ["02", "Preserve choices for children and caregivers."], ["03", "Validate both the product flow and the developmental claims."]],
+      paragraphs: ["Phodong is being refined through several kinds of field evidence. Children use sticker boards and short surveys to express how they experienced the characters and stories; parents and caregivers provide feedback on usability, participation, age fit, and where adult support is needed. Educators and field instructors also identify breakdowns that are difficult to see in a paper prototype.", "These responses are reviewed together and translated into changes to the app flow, instructions, caregiver controls, and story outputs during beta testing. A patent application is also in progress as the team develops the technical framework and product as one continuing project."],
+      figures: [{ src: "../assets/detail/phodong/child-evaluation.png?v=20261007-2", alt: "Children’s sticker evaluation board for the Phodong activity", caption: "A child-friendly evaluation board used after a field activity." }],
+      lessons: [],
     },
     citation: "Kim, G., Choi, Y., & Kim, Y. (2026). Phodong: A Phygital Platform for Parent–Child Co-Creation. Proceedings of HCI Korea 2026.",
   },
@@ -432,6 +436,27 @@ const PAPER_PAGES = {
     links: [
       { label: "Read thesis ↗", url: "https://drive.google.com/file/d/15OSB0PZW5pRxiBokRwO81X-npxQyx_QA/view?usp=sharing", primary: true },
       { label: "Watch presentation ↗", url: "https://www.youtube.com/watch?v=iJNP2CHBXho" },
+    ],
+    presentation: {
+      youtubeId: "iJNP2CHBXho",
+      title: "On the Desk, Not on the Screen research presentation",
+      note: "This video was prepared for an earlier CHI submission; the paper was not accepted at CHI.",
+    },
+    demos: [
+      {
+        step: "01 · Interaction",
+        title: "Meet the virtual EMO used in the matched condition.",
+        description: "Try the browser-based interaction before moving to the post-interaction implicit measure.",
+        url: "https://virtual-emo.vercel.app/",
+        button: "Open Virtual EMO ↗",
+      },
+      {
+        step: "02 · Post-interaction measure",
+        title: "Continue with a public post SC-IAT example.",
+        description: "This demonstration reproduces the virtual-condition post-test flow used to measure implicit associations after the interaction.",
+        url: "https://yebomis.github.io/emo-post-iat-demo/",
+        button: "Open post SC-IAT demo ↗",
+      },
     ],
     summaryTitle: "A body may change not what we say about AI, but how its actions register before reflection.",
     summary: [
@@ -582,6 +607,25 @@ function renderParagraphs(paragraphs = []) {
   return paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
 }
 
+function renderPresentation(presentation) {
+  if (!presentation) return "";
+  return `<section class="paper-video page-width" aria-label="Research presentation">
+    <div class="video-embed"><iframe src="https://www.youtube.com/embed/${presentation.youtubeId}" title="${presentation.title}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    ${presentation.note ? `<p class="video-note">${presentation.note}</p>` : ""}
+  </section>`;
+}
+
+function renderDemos(demos = []) {
+  if (!demos.length) return "";
+  return `<section class="interactive-study page-width" aria-label="Try the virtual study flow">
+    <div class="section-heading compact"><p class="section-label">Try the virtual study flow</p><h2>Experience the matched virtual condition, then continue to the post-interaction measure.</h2><p>Both demos open independently, so you can also use the direct link if a browser blocks the embedded view.</p></div>
+    <div class="demo-grid">${demos.map((demo) => `<article class="demo-card">
+      <div class="demo-copy"><p class="section-label">${demo.step}</p><h3>${demo.title}</h3><p>${demo.description}</p><a href="${demo.url}" target="_blank" rel="noreferrer">${demo.button}</a></div>
+      <div class="demo-embed"><iframe src="${demo.url}" title="${demo.title}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="camera; microphone; autoplay; clipboard-write" allowfullscreen></iframe></div>
+    </article>`).join("")}</div>
+  </section>`;
+}
+
 function renderPaper(page) {
   document.title = `${page.title} — Yebom Choi`;
   const description = document.querySelector('meta[name="description"]');
@@ -599,11 +643,14 @@ function renderPaper(page) {
         <p>${page.abstract}</p>
       </div>
       <div class="hero-question"><span>The central question</span><p>${page.question}</p></div>
+      ${page.heroFigures ? `<div class="hero-figure-pair">${page.heroFigures.map((figure) => `<figure><img src="${figure.src}" alt="${figure.alt}" /><figcaption>${figure.caption}</figcaption></figure>`).join("")}</div>` : ""}
       <div class="paper-actions" aria-label="Research links">
         ${page.links.map((link) => `<a class="${link.primary ? "primary-action" : ""}" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")}
         <a href="#citation">Citation</a>
       </div>
     </section>
+
+    ${renderPresentation(page.presentation)}
 
     <section class="paper-summary page-width" aria-label="Research summary">
       <p class="section-label">In one minute</p>
@@ -623,6 +670,8 @@ function renderPaper(page) {
       ${renderFigures(page.system.figures)}
       <div class="facts-wrap">${renderFacts(page.system.facts)}</div>
     </section>
+
+    ${renderDemos(page.demos)}
 
     <section id="evidence" class="paper-section paper-section-tint">
       <div class="page-width">
@@ -649,7 +698,7 @@ function renderPaper(page) {
         <h2>${page.implication.title}</h2>
         ${renderParagraphs(page.implication.paragraphs)}
       </div>
-      <ol class="design-lessons">${page.implication.lessons.map(([number, text]) => `<li><span>${number}</span><p>${text}</p></li>`).join("")}</ol>
+      ${page.implication.lessons?.length ? `<ol class="design-lessons">${page.implication.lessons.map(([number, text]) => `<li><span>${number}</span><p>${text}</p></li>`).join("")}</ol>` : ""}
       ${renderFigures(page.implication.figures)}
     </section>
 

@@ -31,6 +31,7 @@ const detailData = {
     image: "assets/publication-benevolence-web.png",
     gallery: ["assets/publication-benevolence-web.png"],
     paper: "https://dl.acm.org/doi/pdf/10.1145/3706599.3719279",
+    links: [{ label: "Demo ↗", url: "https://mrg-y1rb.vercel.app/?condition=4&ccode=E88A6AC1F5" }],
   },
   homophily: {
     eyebrow: "Manuscript under review",
@@ -39,7 +40,7 @@ const detailData = {
     role: "First author. Led the framing, experiment, analysis, and manuscript development.",
     methods: "2×2 between-subjects ANCOVA with 140 participants; GPT-4o; ElevenLabs TTS; CloudResearch; R.",
     finding: "Age congruence improved UX broadly—especially for older adults—while regional accent strengthened perceived similarity in community-salient contexts.",
-    links: [{ label: "Demo video ↗", url: "https://youtu.be/fIHGNQhxkyE?si=cRXqr7V3E5IYFjcp" }],
+    links: [{ label: "Video ↗", url: "https://youtu.be/fIHGNQhxkyE?si=cRXqr7V3E5IYFjcp" }],
   },
   chatbots: {
     eyebrow: "Manuscript under review · Computers in Human Behavior",
@@ -68,6 +69,7 @@ const detailData = {
     image: "assets/publication-goodbye-web.jpg",
     gallery: ["assets/publication-goodbye-web.jpg"],
     paper: "https://dl.acm.org/doi/pdf/10.1145/3772363.3798687",
+    links: [{ label: "Video ↗", url: "https://youtu.be/VbXlg3Xxh0g?si=0kWh8hS35E6_chM7" }],
   },
   phodong: {
     eyebrow: "Publication, research platform & product · 2025–Current",
@@ -173,7 +175,7 @@ const detailData = {
   },
   embodiment: {
     eyebrow: "Master's thesis · HRI full paper in submission",
-    title: "On the Desk",
+    title: "On the Desk, Not on the Screen: Physical Co-Presence and Implicit Moral Attribution to AI",
     summary: "Tests whether a physically embodied desktop robot changes implicit mind perception and moral attribution compared with a virtual agent.",
     role: "Sole author and principal investigator. Developed the theory, experimental system, study, analysis, and thesis.",
     methods: "50 participants; 2×2 mixed design; SC-IAT; mixed ANOVA; mediation and path analysis in R/lavaan.",
@@ -193,7 +195,7 @@ const detailData = {
       "assets/publication-sss-poster-web.png",
     ],
     paper: "https://dl.acm.org/doi/full/10.1145/3757374.3771458",
-    links: [{ label: "Demo video ↗", url: "https://youtu.be/kbhWUENajDM?si=b6m7_Tjsb87YCoGQ" }],
+    links: [{ label: "Video ↗", url: "https://youtu.be/kbhWUENajDM?si=b6m7_Tjsb87YCoGQ" }],
   },
   exploitation: {
     eyebrow: "Proceedings · HCI Korea 2025",
@@ -224,12 +226,17 @@ const detailData = {
   },
   "on-the-desk": {
     eyebrow: "Full paper in submission · ACM/IEEE HRI 2027",
-    title: "On the Desk, Not on the Screen",
+    title: "On the Desk, Not on the Screen: Physical Co-Presence and Implicit Moral Attribution to AI",
     summary: "Develops the master's thesis into a full paper on physical co-presence and implicit moral attribution to AI.",
     role: "Sole author and principal investigator of the underlying thesis research.",
     methods: "Physical versus virtual embodiment; SC-IAT; mixed ANOVA; mediation and path analysis.",
     finding: "Tests whether physical presence changes the implicit moral status people assign to AI.",
     image: "assets/publication-embodiment-web.png",
+    links: [
+      { label: "Video ↗", url: "https://www.youtube.com/watch?v=iJNP2CHBXho" },
+      { label: "EMO demo ↗", url: "https://virtual-emo.vercel.app/" },
+      { label: "SC-IAT demo ↗", url: "https://yebomis.github.io/emo-post-iat-demo/" },
+    ],
   },
   "youth-safety": {
     eyebrow: "AI Safety Institute (AISI), Republic of Korea · Sep 2026–Present",
@@ -323,7 +330,7 @@ Object.assign(detailData, window.projectDetails || {});
 const publicationGroups = [
   {
     label: "Posters & Conference Proceedings",
-    ids: ["pub-benevolence", "pub-goodbye", "pub-sss", "pub-phodong", "pub-on-the-desk", "pub-exploitation"],
+    ids: ["pub-sss", "pub-phodong", "pub-on-the-desk", "pub-benevolence", "pub-goodbye", "pub-exploitation"],
   },
   {
     label: "In Submission",
@@ -910,11 +917,4 @@ document.addEventListener("keydown", (event) => {
 
 detailDialog?.addEventListener("click", (event) => {
   if (event.target === detailDialog) detailDialog.close();
-});
-
-const publicationList = document.querySelector("#publications .publication-list");
-const featuredPublicationOrder = ["pub-sss", "pub-phodong", "pub-on-the-desk", "pub-benevolence", "pub-goodbye"];
-featuredPublicationOrder.slice().reverse().forEach((id) => {
-  const card = document.getElementById(id);
-  if (publicationList && card) publicationList.prepend(card);
 });
